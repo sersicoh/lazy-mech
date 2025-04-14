@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  base: '/box-it/',
+  base: '/',
   plugins: [react(), svgr()],
   resolve: {
     alias: {
