@@ -6,8 +6,9 @@ export const content: IContent = {
   lazyMech: {
     title: 'Leniwy Mech',
     description: [
-      'Leniwy Mech to nic innego jak fiński mech chrobotek (Cladonia stellaris) umieszczony w stylowej doniczce, którą samodzielnie stworzyłem.',
-      'Ten mech jest niezwykle popularny w dekoracjach ze względu na swoją miękką strukturę, naturalny wygląd i właściwości antystatyczne. Praktycznie nie wymaga pielęgnacji, a przy odpowiedniej wilgotności powietrza utrzymuje swój żywy wygląd przez długie lata.',
+      'Leniwy Mech to naturalny fiński mech chrobotek (Cladonia stellaris), wyróżniający się miękką strukturą, antystatycznymi właściwościami i charakterystycznym, dekoracyjnym wyglądem.',
+      'Nie wymaga podlewania ani przycinania — przy odpowiedniej wilgotności powietrza zachowuje świeży wygląd przez długie lata, pozostając efektownym i bezobsługowym elementem każdej przestrzeni.',
+      'Świetnie sprawdza się w różnych pomieszczeniach domowych, takich jak salon, sypialnia czy łazienka, a także w przestrzeniach usługowych – od biur po salony urody.',
     ],
     imageUrl: '/logo.png',
   },
@@ -16,13 +17,15 @@ export const content: IContent = {
       {
         name: 'Zmechacona doniczka',
         description:
-          'Zielona ściana z mchu to doskonały sposób na wprowadzenie natury do Twojego wnętrza.',
+          'Stylowa doniczka wypełniona naturalnym fińskim mchem chrobotkiem to prosty sposób na dodanie natury do wnętrza – efektownie i bezobsługowo.',
         advantages: [
-          'Nie wymaga podlewania ani nawożenia.',
-          'Pochłania wilgoć z otoczenia, co pomaga utrzymać odpowiednią wilgotność.',
-          'Jest hipoalergiczny i antystatyczny.',
-          'Zachowuje swój kolor i miękką strukturę przez długi czas.',
-          'Zalecana wilgotność 40-60%.',
+          'Nie wymaga podlewania ani żadnej pielęgnacji.',
+          'Długo zachowuje intensywny kolor i miękką strukturę.',
+          'Bezpieczny dla alergików - nie pyli i nie przyciąga kurzu.',
+          'Pomaga utrzymać komfortową wilgotność w pomieszczeniu.',
+          'Najlepiej czuje się przy wilgotności powietrza 40-60%.',
+          'Nie wymaga dostępu do światła.',
+          'Nie lubi jak świeci na niego słońce.',
         ],
         imageUrl: 'planter.jpg',
       },
