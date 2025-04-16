@@ -31,7 +31,9 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
 
     try {
       const orderId = await sendOrderEmails(email, quantity);
-      setSnackbarMessage(`Dziękujemy za zamówienie! Twój nr zamówienia: ${orderId}`);
+      setSnackbarMessage(
+        `Dziękujemy za zamówienie! Twój nr zamówienia: ${orderId}. Wysłaliśmy potwierdzenie na podany adres e-mail.`
+      );
       setSnackbarSeverity('success');
       setSnackbarOpen(true);
     } catch (error) {
@@ -102,7 +104,7 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
           {loading ? 'Wysyłanie...' : submitButton}
         </Button>
       </Box>
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={() => setSnackbarOpen(false)}>
+      <Snackbar open={snackbarOpen} autoHideDuration={10000} onClose={() => setSnackbarOpen(false)}>
         <Alert
           onClose={() => setSnackbarOpen(false)}
           severity={snackbarSeverity}
