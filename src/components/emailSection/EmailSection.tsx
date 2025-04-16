@@ -1,18 +1,49 @@
 import React, { useState } from 'react';
 
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, Snackbar, TextField, Typography } from '@mui/material';
+
+import { sendOrderEmails } from '@hooks/useSendOrderEmails';
 
 import type { IContent } from '@/content/content.types';
 
 export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSection'] }) => {
-  const { title, description, emailPlaceholder, emailHelperText, submitButton } = emailSection;
-  const [email, setEmail] = useState('');
+  const {
+    title,
+    description,
+    emailPlaceholder,
+    emailHelperText,
+    submitButton,
+    quantityPlaceholder,
+  } = emailSection;
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [email, setEmail] = useState('');
+  const [quantity, setQuantity] = useState(1);
+
+  const [loading, setLoading] = useState(false);
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // W przyszłości podłączysz np. emailJS
-    console.log('Email submitted:', email);
-    setEmail('');
+    setLoading(true);
+
+    try {
+      const orderId = await sendOrderEmails(email, quantity);
+      setSnackbarMessage(`Dziękujemy za zamówienie! Twój nr zamówienia: ${orderId}`);
+      setSnackbarSeverity('success');
+      setSnackbarOpen(true);
+    } catch (error) {
+      console.error('Coś poszło nie tak przy wysyłce maili:', error);
+      setSnackbarMessage('Wystąpił błąd podczas wysyłki. Spróbuj ponownie.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
+    } finally {
+      setLoading(false);
+      setEmail('');
+      setQuantity(1);
+    }
   };
 
   return (
@@ -50,14 +81,36 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
           onChange={(e) => setEmail(e.target.value)}
           helperText={emailHelperText}
           required
-          sx={{
-            width: '100%',
-          }}
+          sx={{ width: '100%' }}
         />
-        <Button type='submit' variant='contained' color='primary' sx={{ width: '100%', py: 1 }}>
-          {submitButton}
+        <TextField
+          label={quantityPlaceholder}
+          variant='outlined'
+          type='number'
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
+          required
+          sx={{ width: '100%' }}
+        />
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          sx={{ width: '100%', py: 1 }}
+          disabled={loading}
+        >
+          {loading ? 'Wysyłanie...' : submitButton}
         </Button>
       </Box>
+      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={() => setSnackbarOpen(false)}>
+        <Alert
+          onClose={() => setSnackbarOpen(false)}
+          severity={snackbarSeverity}
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };

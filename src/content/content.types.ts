@@ -19,6 +19,7 @@ export interface IContent {
     description: string;
     emailPlaceholder: string;
     emailHelperText: string;
+    quantityPlaceholder: string;
     submitButton: string;
   };
 }

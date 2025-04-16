@@ -4,12 +4,13 @@ export const content: IContent = {
   header: 'Dekoracje z mchu',
   footer: 'Leniwy Mech. Wszelkie prawa zastrzeżone',
   lazyMech: {
-    title: 'Leniwy Mech',
+    title: 'Cześć!',
     description: [
-      'Leniwy Mech to naturalny fiński mech chrobotek (Cladonia stellaris), wyróżniający się miękką strukturą, antystatycznymi właściwościami i charakterystycznym, dekoracyjnym wyglądem.',
-      'Nie wymaga podlewania ani przycinania — przy odpowiedniej wilgotności powietrza zachowuje świeży wygląd przez długie lata, pozostając efektownym i bezobsługowym elementem każdej przestrzeni.',
-      'Świetnie sprawdza się w różnych pomieszczeniach domowych, takich jak salon, sypialnia czy łazienka, a także w przestrzeniach usługowych – od biur po salony urody.',
+      'Jestem Leniwy Mech - naturalny fiński chrobotek (Cladonia stellaris), który lubi dobrze wyglądać bez zbędnego wysiłku.',
+      'Nie trzeba mnie podlewać ani przycinać. Wystarczy, że w powietrzu jest trochę wilgoci, a przez długie lata będę wyglądać świeżo i dekoracyjnie.',
+      'Pasuję do każdego wnętrza - od salonu, przez łazienkę, po biuro czy salon urody. Gdziekolwiek mnie postawisz, wprowadzę tam trochę natury i spokoju.',
     ],
+
     imageUrl: '/logo.png',
   },
   productSection: {
@@ -33,8 +34,10 @@ export const content: IContent = {
   },
   emailSection: {
     title: 'Chcesz taką ozdobę?',
-    description: 'Zostaw swój adres e-mail, na który wyślemy Ci niezbędne informacje :)',
+    description:
+      'Każde zamówienie będzie realizowane indywidualnie, wystarczy, że podasz mi swój adres e-mail i podasz ilość sztuk, które chcesz zamówić, a ja się z Tobą skontaktuję i ustalę szczegóły.',
     emailPlaceholder: 'Adres e-mail',
+    quantityPlaceholder: 'Ilość sztuk',
     emailHelperText: 'Nie udostępnimy Twojego adresu nikomu innemu.',
     submitButton: 'Wyślij',
   },
