@@ -29,6 +29,7 @@ export const content: IContent = {
           'Nie lubi jak świeci na niego słońce.',
         ],
         imageUrl: 'planter.jpg',
+        overlayImageUrl: 'planter_overlay.jpg',
       },
     ],
   },

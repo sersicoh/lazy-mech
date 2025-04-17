@@ -5,9 +5,47 @@ import type { IContent } from '@/content/content.types';
 
 type Product = IContent['productSection']['product'][number];
 
-export const ProductSection = ({ name, description, advantages, imageUrl }: Product) => {
+export const ProductSection = ({
+  name,
+  description,
+  advantages,
+  imageUrl,
+  overlayImageUrl,
+}: Product) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+
   const image = new URL(`/src/assets/${imageUrl}`, import.meta.url).href;
+  const overlayImage = overlayImageUrl
+    ? new URL(`/src/assets/${overlayImageUrl}`, import.meta.url).href
+    : undefined;
+
+  const Picture = () => (
+    <Box sx={{ position: 'relative', width: '100%', borderRadius: 2, boxShadow: 3 }}>
+      <Box
+        component='img'
+        src={image}
+        alt={name}
+        sx={{ width: '100%', height: 'auto', borderRadius: 2, display: 'block', mb: 2 }}
+      />
+
+      {overlayImage && (
+        <Box
+          component='img'
+          src={overlayImage}
+          alt={`${name} - dodatkowy`}
+          sx={{
+            position: 'absolute',
+            top: '3%',
+            right: '3%',
+            width: '25%',
+            height: 'auto',
+            borderRadius: 2,
+            boxShadow: `2px 2px 12px 0px rgba(255, 255, 255, 0.75)`,
+          }}
+        />
+      )}
+    </Box>
+  );
 
   return (
     <Box sx={{ p: 2 }}>
@@ -39,20 +77,7 @@ export const ProductSection = ({ name, description, advantages, imageUrl }: Prod
           <Typography variant='body1' sx={{ mb: 2, textAlign: 'center' }}>
             {description}
           </Typography>
-          <Box
-            component='img'
-            src={image}
-            alt={name}
-            sx={{
-              width: '100%',
-              height: 'auto',
-              borderRadius: 2,
-              boxShadow: 3,
-              display: 'block',
-              mx: 'auto',
-              mb: 3,
-            }}
-          />
+          <Picture />
           <Typography
             variant='h6'
             textAlign={'center'}
@@ -127,19 +152,7 @@ export const ProductSection = ({ name, description, advantages, imageUrl }: Prod
               </List>
             </Grid>
             <Grid size={{ xs: 12, md: 5 }}>
-              <Box
-                component='img'
-                src={image}
-                alt={name}
-                sx={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: 2,
-                  boxShadow: 3,
-                  display: 'block',
-                  mx: 'auto',
-                }}
-              />
+              <Picture />
             </Grid>
           </Grid>
         </Box>

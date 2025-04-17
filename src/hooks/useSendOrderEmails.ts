@@ -8,7 +8,7 @@ const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 const numericId = customAlphabet('0123456789', 10);
 
-export async function sendOrderEmails(clientEmail: string, quantity: number): Promise<string> {
+export async function sendOrderEmails(clientEmail: string, quantity: number | ''): Promise<string> {
   const newOrderId = numericId();
 
   // const mailToOwnerParams = {

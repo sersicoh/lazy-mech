@@ -12,6 +12,7 @@ export interface IContent {
       description: string;
       advantages: string[];
       imageUrl: string;
+      overlayImageUrl: string;
     }[];
   };
   emailSection: {

@@ -17,7 +17,12 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
   } = emailSection;
 
   const [email, setEmail] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number | ''>(1);
+
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const v = e.target.value;
+    setQuantity(v === '' ? '' : Number(v));
+  };
 
   const [loading, setLoading] = useState(false);
 
@@ -90,7 +95,7 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
           variant='outlined'
           type='number'
           value={quantity}
-          onChange={(e) => setQuantity(Number(e.target.value))}
+          onChange={handleQuantityChange}
           required
           sx={{ width: '100%' }}
         />
