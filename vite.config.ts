@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  base: '/',
+  base: '/lazy-mech/',
   plugins: [react(), svgr()],
   resolve: {
     alias: {
