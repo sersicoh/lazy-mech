@@ -11,7 +11,7 @@ export const content: IContent = {
       'Pasuję do każdego wnętrza - od salonu, przez łazienkę, po biuro czy salon urody. Gdziekolwiek mnie postawisz, wprowadzę tam trochę natury i spokoju.',
     ],
 
-    imageUrl: '/logo.png',
+    imageUrl: 'logo.png',
   },
   productSection: {
     product: [

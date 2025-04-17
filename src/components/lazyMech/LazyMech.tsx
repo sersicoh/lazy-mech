@@ -6,13 +6,14 @@ import type { IContent } from '@/content/content.types';
 export const LazyMech = ({ lazyMech }: { lazyMech: IContent['lazyMech'] }) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const { title, description, imageUrl } = lazyMech;
+  const image = new URL(`/src/assets/${imageUrl}`, import.meta.url).href;
   return (
     <Box sx={{ p: 4 }}>
       <Grid container spacing={4} alignItems='center'>
         <Grid size={{ xs: 12, md: 5 }}>
           <Box
             component='img'
-            src={imageUrl}
+            src={image}
             alt='lazy Mech'
             sx={{
               maxWidth: '100%',
