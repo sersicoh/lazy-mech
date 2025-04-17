@@ -2,7 +2,7 @@ import type { IContent } from '@/content/content.types';
 
 export const content: IContent = {
   header: 'Dekoracje z mchu',
-  footer: 'Leniwy Mech. Wszelkie prawa zastrzeżone',
+  footer: 'KuzyNostra. Wszelkie prawa zastrzeżone',
   lazyMech: {
     title: 'Cześć!',
     description: [

@@ -11,7 +11,10 @@ export const Header = ({ headerContent }: { headerContent: IContent['header'] })
       }}
     >
       <Toolbar>
-        <Typography variant='h4' sx={{ textAlign: 'center', flexGrow: 1 }}>
+        <Typography
+          variant='h4'
+          sx={{ textAlign: 'center', flexGrow: 1, textTransform: 'uppercase' }}
+        >
           {headerContent}
         </Typography>
       </Toolbar>
