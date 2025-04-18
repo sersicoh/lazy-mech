@@ -105,7 +105,6 @@ export const ProductSection = ({
             Cechy
           </Typography>
           <List>
-            ro
             {advantages.map((advantage, index) => (
               <ListItem key={index} sx={{ py: 0.5 }}>
                 <ListItemText primary={advantage} />
