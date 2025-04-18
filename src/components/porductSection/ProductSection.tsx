@@ -1,5 +1,17 @@
 import type { Theme } from '@mui/material';
-import { Box, Grid, List, ListItem, ListItemText, Typography, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Divider,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
+
+import { Arrangements } from '@components/arrangement/Arrangements';
+import { CustomAccordion } from '@components/customAccordion/CustomAccordion';
 
 import type { IContent } from '@/content/content.types';
 
@@ -11,6 +23,7 @@ export const ProductSection = ({
   advantages,
   imageUrl,
   overlayImageUrl,
+  arrangements,
 }: Product) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
@@ -46,7 +59,6 @@ export const ProductSection = ({
       )}
     </Box>
   );
-
   return (
     <Box sx={{ p: 2 }}>
       {isMobile ? (
@@ -93,12 +105,21 @@ export const ProductSection = ({
             Cechy
           </Typography>
           <List>
+            ro
             {advantages.map((advantage, index) => (
               <ListItem key={index} sx={{ py: 0.5 }}>
                 <ListItemText primary={advantage} />
               </ListItem>
             ))}
           </List>
+          <CustomAccordion label='Nasze aranżacje'>
+            {arrangements.map((arrangement, index) => (
+              <>
+                <Arrangements key={index} arrangements={arrangement} />
+                {index < arrangements.length - 1 && <Divider sx={{ my: 2 }} />}
+              </>
+            ))}
+          </CustomAccordion>
         </Box>
       ) : (
         <Box
@@ -154,6 +175,14 @@ export const ProductSection = ({
             <Grid size={{ xs: 12, md: 5 }}>
               <Picture />
             </Grid>
+            <CustomAccordion label='Nasze aranżacje'>
+              {arrangements.map((arrangement, index) => (
+                <>
+                  <Arrangements key={index} arrangements={arrangement} />
+                  {index < arrangements.length - 1 && <Divider sx={{ my: 4 }} />}
+                </>
+              ))}
+            </CustomAccordion>
           </Grid>
         </Box>
       )}

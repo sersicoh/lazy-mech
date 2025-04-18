@@ -1,3 +1,12 @@
+export interface IArrangements {
+  location?: {
+    title: string;
+    link: string;
+  };
+  description: string;
+  imageUrls: string[];
+}
+
 export interface IContent {
   header?: string;
   footer: string;
@@ -13,6 +22,7 @@ export interface IContent {
       advantages: string[];
       imageUrl: string;
       overlayImageUrl: string;
+      arrangements: IArrangements[];
     }[];
   };
   emailSection: {

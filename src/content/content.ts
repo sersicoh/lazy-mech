@@ -30,6 +30,17 @@ export const content: IContent = {
         ],
         imageUrl: 'planter2.jpg',
         overlayImageUrl: 'planter_overlay.jpg',
+        arrangements: [
+          {
+            location: {
+              title: 'KoloLove - salon fryzjerski',
+              link: 'https://maps.app.goo.gl/K4LVSbuBd9yh83Qu5',
+            },
+            description:
+              'Nasze doniczki zamieszkały w salonie Kololove we Wrocławiu przy Bogatyńskiej 6 - wpadnij je zobaczyć na żywo, a przy okazji możesz też odświeżyć fryzurę. One już to zrobiły!',
+            imageUrls: ['kololove1.jpg', 'kololove2.jpg'],
+          },
+        ],
       },
     ],
   },
