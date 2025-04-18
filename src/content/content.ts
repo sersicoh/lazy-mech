@@ -28,7 +28,7 @@ export const content: IContent = {
           'Nie wymaga dostępu do światła.',
           'Nie lubi jak świeci na niego słońce.',
         ],
-        imageUrl: 'planter.jpg',
+        imageUrl: 'planter2.jpg',
         overlayImageUrl: 'planter_overlay.jpg',
       },
     ],
