@@ -26,6 +26,7 @@ const theme = createTheme({
     },
     body2: {
       fontWeight: 600,
+      lineHeight: 1.2,
     },
   },
   components: {

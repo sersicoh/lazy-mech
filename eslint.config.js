@@ -11,8 +11,10 @@ import tseslint from 'typescript-eslint';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**'],
+  },
+  {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    ignores: ['dist', 'node_modules'],
     settings: {
       react: {
         version: 'detect',

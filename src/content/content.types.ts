@@ -19,12 +19,12 @@ export interface IContent {
     product: {
       name: string;
       description: string;
-      advantages: string[];
-      imageUrl: string;
-      overlayImageUrl: string;
-      arrangements: IArrangements[];
+      advantages?: string[];
+      imageUrl: string[];
+      overlayImageUrl?: string;
     }[];
   };
+  arrangements?: IArrangements[];
   emailSection: {
     title: string;
     description: string;

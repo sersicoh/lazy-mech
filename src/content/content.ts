@@ -16,34 +16,49 @@ export const content: IContent = {
   productSection: {
     product: [
       {
-        name: 'Zmechacona doniczka',
+        name: 'Mech Gagatek',
         description:
-          'Stylowa doniczka wypełniona naturalnym fińskim mchem chrobotkiem to prosty sposób na dodanie natury do wnętrza – efektownie i bezobsługowo.',
-        advantages: [
-          'Nie wymaga podlewania ani żadnej pielęgnacji.',
-          'Długo zachowuje intensywny kolor i miękką strukturę.',
-          'Bezpieczny dla alergików - nie pyli i nie przyciąga kurzu.',
-          'Pomaga utrzymać komfortową wilgotność w pomieszczeniu.',
-          'Najlepiej czuje się przy wilgotności powietrza 40-60%.',
-          'Nie wymaga dostępu do światła.',
-          'Nie lubi jak świeci na niego słońce.',
-        ],
-        imageUrl: 'planter2.jpg',
-        overlayImageUrl: 'planter_overlay.jpg',
-        arrangements: [
-          {
-            location: {
-              title: 'KoloLove - salon fryzjerski',
-              link: 'https://maps.app.goo.gl/K4LVSbuBd9yh83Qu5',
-            },
-            description:
-              'Nasze doniczki zamieszkały w salonie Kololove we Wrocławiu przy Bogatyńskiej 6 - wpadnij je zobaczyć na żywo, a przy okazji możesz też odświeżyć fryzurę. One już to zrobiły!',
-            imageUrls: ['kololove1.jpg', 'kololove2.jpg'],
-          },
-        ],
+          'Największy z naszej rodziny mchu - dumny, efektowny i zawsze na pierwszym planie.',
+        imageUrl: ['gagatek.jpg'],
+        overlayImageUrl: 'gagatek_overlay.jpg',
+      },
+      {
+        name: 'Mech Smyk',
+        description:
+          'Mniejszy, ale równie czarujący - idealny do mniejszych przestrzeni i wesołych aranżacji.',
+        imageUrl: ['smyk1.jpg', 'smyk2.jpg'],
+      },
+      {
+        name: 'Mech Niuchacz',
+        description:
+          'Ten sam mech, ta sama radość - ale z bonusem w postaci przyjemnego zapachu dzięki funkcji dyfuzora.',
+        imageUrl: ['niuchacz1.jpg', 'niuchacz2.jpg'],
+      },
+      {
+        name: 'Mała Ekipa',
+        description:
+          'Zestaw dwóch doniczek - Smyka i Niuchacza. Kompaktowy, stylowy i gotowy do wręczenia. Jeden pachnie, oba zachwycają. Sprawdzi się jako prezent albo detal do przytulnego wnętrza.',
+        imageUrl: ['ekipa1.jpg', 'ekipa2.jpg'],
+      },
+      {
+        name: 'Mchu Banda',
+        description:
+          'Zestaw trzech uroczych doniczek z mchem - dwa Smyki i jeden Niuchacz. Idealny prezent lub gotowa dekoracja do mieszkania, biura albo łazienki. Pachnie, wygląda i niczego nie wymaga.',
+        imageUrl: ['banda1.jpg', 'banda2.jpg'],
       },
     ],
   },
+  arrangements: [
+    {
+      location: {
+        title: 'KoloLove - salon fryzjerski',
+        link: 'https://maps.app.goo.gl/K4LVSbuBd9yh83Qu5',
+      },
+      description:
+        'Nasze doniczki zamieszkały w salonie Kololove we Wrocławiu przy Bogatyńskiej 6 - wpadnij je zobaczyć na żywo, a przy okazji możesz też odświeżyć fryzurę. One już to zrobiły!',
+      imageUrls: ['kololove1.jpg', 'kololove2.jpg'],
+    },
+  ],
   emailSection: {
     title: 'Chcesz taką ozdobę?',
     description:

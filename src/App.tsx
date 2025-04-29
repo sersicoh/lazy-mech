@@ -1,6 +1,7 @@
 import { Box, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
+import { ArrangementsView } from '@components/arrangement/ArrangementsView';
 import { EmailSection } from '@components/emailSection/EmailSection';
 import { LazyMech } from '@components/lazyMech/LazyMech';
 import { ProductSection } from '@components/porductSection/ProductSection';
@@ -12,7 +13,8 @@ import { content } from '@/content/content';
 import type { IContent } from '@/content/content.types';
 
 export const App = () => {
-  const { header, footer, productSection, emailSection, lazyMech }: IContent = content;
+  const { header, footer, productSection, emailSection, lazyMech, arrangements }: IContent =
+    content;
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -22,6 +24,7 @@ export const App = () => {
           {productSection.product.map((productItem) => (
             <ProductSection key={productItem.name} {...productItem} />
           ))}
+          {arrangements && <ArrangementsView arrangements={arrangements} />}
           <EmailSection emailSection={emailSection} />
         </Box>
       </MainLayout>
