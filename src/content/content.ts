@@ -16,13 +16,6 @@ export const content: IContent = {
   productSection: {
     product: [
       {
-        name: 'Mech Gagatek',
-        description:
-          'Największy z naszej rodziny mchu - dumny, efektowny i zawsze na pierwszym planie.',
-        imageUrl: ['gagatek.jpg'],
-        overlayImageUrl: 'gagatek_overlay.jpg',
-      },
-      {
         name: 'Mech Smyk',
         description:
           'Mniejszy, ale równie czarujący - idealny do mniejszych przestrzeni i wesołych aranżacji.',
@@ -45,6 +38,13 @@ export const content: IContent = {
         description:
           'Zestaw trzech uroczych doniczek z mchem - dwa Smyki i jeden Niuchacz. Idealny prezent lub gotowa dekoracja do mieszkania, biura albo łazienki. Pachnie, wygląda i niczego nie wymaga.',
         imageUrl: ['banda1.jpg', 'banda2.jpg'],
+      },
+      {
+        name: 'Ojciec Mechrzestny',
+        description:
+          'Największy z naszej rodziny mchu - dumny, efektowny i zawsze na pierwszym planie. Od niego wszystko się zaczęło.',
+        imageUrl: ['gagatek.jpg'],
+        overlayImageUrl: 'gagatek_overlay.jpg',
       },
     ],
   },
