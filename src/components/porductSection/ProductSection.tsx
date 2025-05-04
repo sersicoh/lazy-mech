@@ -7,14 +7,10 @@ import type { IContent } from '@/content/content.types';
 
 type Product = IContent['productSection']['product'][number];
 
-export const ProductSection = ({ name, description, imageUrl, overlayImageUrl }: Product) => {
+export const ProductSection = ({ id, name, description, imageUrl }: Product) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
-  const images = imageUrl.map((url) => new URL(`/src/assets/${url}`, import.meta.url).href);
-  const overlayImage = overlayImageUrl
-    ? new URL(`/src/assets/${overlayImageUrl}`, import.meta.url).href
-    : undefined;
-
+  const images = imageUrl.map((url) => new URL(`/src/assets/${id}/${url}`, import.meta.url).href);
   return (
     <Box sx={{ p: 2 }}>
       {isMobile ? (
@@ -53,7 +49,7 @@ export const ProductSection = ({ name, description, imageUrl, overlayImageUrl }:
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <PictureCarousel images={images} overlayImage={overlayImage} name={name} />
+            <PictureCarousel images={images} name={name} />
           </Grid>
         </Grid>
       ) : (
@@ -98,7 +94,7 @@ export const ProductSection = ({ name, description, imageUrl, overlayImageUrl }:
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
-              <PictureCarousel images={images} overlayImage={overlayImage} name={name} />
+              <PictureCarousel images={images} name={name} />
             </Grid>
           </Grid>
         </Box>

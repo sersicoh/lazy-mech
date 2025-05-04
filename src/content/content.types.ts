@@ -1,4 +1,5 @@
 export interface IArrangements {
+  id: string;
   location?: {
     title: string;
     link: string;
@@ -17,11 +18,11 @@ export interface IContent {
   };
   productSection: {
     product: {
+      id: string;
       name: string;
       description: string;
       advantages?: string[];
       imageUrl: string[];
-      overlayImageUrl?: string;
     }[];
   };
   arrangements?: IArrangements[];

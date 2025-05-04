@@ -38,10 +38,10 @@ export const ArrangementsView = ({ arrangements }: { arrangements: IArrangements
         {arrangements && (
           <>
             {arrangements.map((arrangement, index) => (
-              <>
-                <Arrangements key={index} arrangements={arrangement} />
+              <div key={arrangement.id}>
+                <Arrangements arrangements={arrangement} />
                 {index < arrangements.length - 1 && <Divider sx={{ my: 2 }} />}
-              </>
+              </div>
             ))}
           </>
         )}

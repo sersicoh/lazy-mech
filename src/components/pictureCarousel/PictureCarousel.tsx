@@ -5,11 +5,10 @@ import { Box, IconButton } from '@mui/material';
 
 interface PictureCarouselProps {
   images: string[];
-  overlayImage?: string;
   name: string;
 }
 
-const PictureCarousel = ({ images, overlayImage, name }: PictureCarouselProps) => {
+const PictureCarousel = ({ images, name }: PictureCarouselProps) => {
   const [index, setIndex] = useState(0);
   const total = images.length;
 
@@ -25,7 +24,11 @@ const PictureCarousel = ({ images, overlayImage, name }: PictureCarouselProps) =
         aspectRatio: '1',
         borderRadius: 2,
         boxShadow: 3,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         overflow: 'hidden',
+        backgroundColor: `#ffffff`,
       }}
     >
       {images.map((src, i) => (
@@ -36,65 +39,42 @@ const PictureCarousel = ({ images, overlayImage, name }: PictureCarouselProps) =
           alt={`${name} – ${i + 1}/${total}`}
           sx={{
             position: 'absolute',
-            inset: 0,
             width: '100%',
-            height: '100%',
             objectFit: 'cover',
-            borderRadius: 2,
             transition: 'opacity .3s ease-in-out',
             opacity: i === index ? 1 : 0,
             pointerEvents: 'none',
           }}
         />
       ))}
-
-      {overlayImage && (
-        <Box
-          component='img'
-          src={overlayImage}
-          alt={`${name} – dodatkowy`}
-          sx={{
-            position: 'absolute',
-            top: '3%',
-            right: '3%',
-            width: '25%',
-            height: 'auto',
-            borderRadius: 2,
-            boxShadow: '2px 2px 12px rgba(255,255,255,.75)',
-          }}
-        />
-      )}
-
       {total > 1 && (
         <>
           <IconButton
             onClick={prev}
             sx={{
               position: 'absolute',
-              top: '50%',
+              bottom: '3%',
               left: '3%',
-              transform: 'translateY(-50%)',
               color: 'white',
-              backgroundColor: 'rgba(0,0,0,.4)',
-              '&:hover': { backgroundColor: 'rgba(0,0,0,.6)' },
+              backgroundColor: 'rgba(114, 140, 105, .7)',
+              '&:hover': { backgroundColor: 'rgba(114, 140, 105, .9)' },
             }}
           >
-            <ArrowBackIosNew fontSize='medium' />
+            <ArrowBackIosNew fontSize='large' />
           </IconButton>
 
           <IconButton
             onClick={next}
             sx={{
               position: 'absolute',
-              top: '50%',
+              bottom: '3%',
               right: '3%',
-              transform: 'translateY(-50%)',
               color: 'white',
-              backgroundColor: 'rgba(0,0,0,.4)',
-              '&:hover': { backgroundColor: 'rgba(0,0,0,.6)' },
+              backgroundColor: 'rgba(114, 140, 105, .7)',
+              '&:hover': { backgroundColor: 'rgba(114, 140, 105, .9)' },
             }}
           >
-            <ArrowForwardIos fontSize='medium' />
+            <ArrowForwardIos fontSize='large' />
           </IconButton>
         </>
       )}
@@ -114,10 +94,10 @@ const PictureCarousel = ({ images, overlayImage, name }: PictureCarouselProps) =
               key={i}
               onClick={() => goTo(i)}
               sx={{
-                width: 14,
-                height: 14,
+                width: 16,
+                height: 16,
                 borderRadius: '50%',
-                backgroundColor: i === index ? 'white' : 'rgba(255,255,255,.5)',
+                backgroundColor: i === index ? 'rgba(114, 140, 105)' : 'rgba(114, 140, 105, .5)',
                 cursor: 'pointer',
               }}
             />

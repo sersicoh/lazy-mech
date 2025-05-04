@@ -13,16 +13,16 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
     emailPlaceholder,
     emailHelperText,
     submitButton,
-    quantityPlaceholder,
+    // quantityPlaceholder,
   } = emailSection;
 
   const [email, setEmail] = useState('');
   const [quantity, setQuantity] = useState<number | ''>(1);
 
-  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = e.target.value;
-    setQuantity(v === '' ? '' : Number(v));
-  };
+  // const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const v = e.target.value;
+  //   setQuantity(v === '' ? '' : Number(v));
+  // };
 
   const [loading, setLoading] = useState(false);
 
@@ -90,7 +90,7 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
           required
           sx={{ width: '100%' }}
         />
-        <TextField
+        {/* <TextField
           label={quantityPlaceholder}
           variant='outlined'
           type='number'
@@ -98,7 +98,7 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
           onChange={handleQuantityChange}
           required
           sx={{ width: '100%' }}
-        />
+        /> */}
         <Button
           type='submit'
           variant='contained'
