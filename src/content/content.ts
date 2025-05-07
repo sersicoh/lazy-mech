@@ -18,6 +18,7 @@ export const content: IContent = {
       {
         id: 'smyk',
         name: 'Mech Smyk',
+        soldOut: true,
         description:
           'Mniejszy, ale równie czarujący - idealny do mniejszych przestrzeni i wesołych aranżacji.',
         imageUrl: [
@@ -30,6 +31,7 @@ export const content: IContent = {
       {
         id: 'niuchacz',
         name: 'Mech Niuchacz',
+        soldOut: true,
         description:
           'Ten sam mech, ta sama radość - ale z bonusem w postaci przyjemnego zapachu dzięki funkcji dyfuzora.',
         imageUrl: ['niuchacz_marble.jpg', 'niuchacz_onyx.jpg'],
@@ -37,6 +39,7 @@ export const content: IContent = {
       {
         id: 'ekipa',
         name: 'Mała Ekipa',
+        soldOut: true,
         description:
           'Zestaw dwóch doniczek - Smyka i Niuchacza. Kompaktowy, stylowy i gotowy do wręczenia. Jeden pachnie, oba zachwycają. Sprawdzi się jako prezent albo detal do przytulnego wnętrza.',
         imageUrl: [
@@ -73,13 +76,13 @@ export const content: IContent = {
           'mechrzestny_marble_table.jpg',
         ],
       },
-      {
-        id: 'dzienMatki',
-        name: 'Dzień Matki 2025',
-        description:
-          'Bo Mama zasługuje na wszystko, co najlepsze - nawet na kawałek lasu w doniczce. Limitowana edycja naszego zestawu Mchu Banda - elegancka wersja tylko na Dzień Matki. 30 zestawów w czerni i zaledwie 5 w wersji marmurowej. Stylowy, pachnący i zawsze oddany. Jak prawdziwy członek rodziny...',
-        imageUrl: ['dzienMatki.jpg'],
-      },
+      // {
+      //   id: 'dzienMatki',
+      //   name: 'Dzień Matki 2025',
+      //   description:
+      //     'Bo Mama zasługuje na wszystko, co najlepsze - nawet na kawałek lasu w doniczce. Limitowana edycja naszego zestawu Mchu Banda - elegancka wersja tylko na Dzień Matki. 30 zestawów w czerni i zaledwie 5 w wersji marmurowej. Stylowy, pachnący i zawsze oddany. Jak prawdziwy członek rodziny...',
+      //   imageUrl: ['dzienMatki.jpg'],
+      // },
     ],
   },
   arrangements: [
@@ -95,12 +98,12 @@ export const content: IContent = {
     },
   ],
   emailSection: {
-    title: 'Przygarnij mech?',
+    title: 'Przygarnij mech',
     description:
-      'Wystarczy, że zostawisz nam swój adres e-mail, a my się z Tobą skontaktujemy i ustalimy szczegóły.',
+      'Zostaw nam swój adres e-mail, a my się z Tobą skontaktujemy i ustalimy szczegóły.',
     emailPlaceholder: 'Adres e-mail',
     quantityPlaceholder: 'Ilość sztuk',
-    emailHelperText: 'Nie udostępnimy Twojego adresu nikomu innemu.',
+    emailHelperText: 'Nie udostępniamy Twojego adresu nikomu.',
     submitButton: 'Wyślij',
   },
 };

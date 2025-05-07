@@ -37,7 +37,7 @@ export const EmailSection = ({ emailSection }: { emailSection: IContent['emailSe
     try {
       const orderId = await sendOrderEmails(email, quantity);
       setSnackbarMessage(
-        `Dziękujemy za zamówienie! Twój nr zamówienia: ${orderId}. Wysłaliśmy potwierdzenie na podany adres e-mail.`
+        `Dziękujemy za zainteresowanie! Twój nr zamówienia: ${orderId}. Wysłaliśmy potwierdzenie na podany adres e-mail.`
       );
       setSnackbarSeverity('success');
       setSnackbarOpen(true);

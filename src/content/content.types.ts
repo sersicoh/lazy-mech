@@ -19,6 +19,7 @@ export interface IContent {
   productSection: {
     product: {
       id: string;
+      soldOut?: boolean;
       name: string;
       description: string;
       advantages?: string[];

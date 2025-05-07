@@ -5,12 +5,46 @@ import PictureCarousel from '@components/pictureCarousel/PictureCarousel';
 
 import type { IContent } from '@/content/content.types';
 
-type Product = IContent['productSection']['product'][number];
+type ProductProps = IContent['productSection']['product'][number];
 
-export const ProductSection = ({ id, name, description, imageUrl }: Product) => {
+export const ProductSection = ({
+  id,
+  name,
+  description,
+  imageUrl,
+  soldOut = false,
+}: ProductProps) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
   const images = imageUrl.map((url) => new URL(`/src/assets/${id}/${url}`, import.meta.url).href);
+
+  const soldOutStamp = new URL('/src/assets/soldOut.svg', import.meta.url).href;
+
+  /**
+   * Obudowujemy karuzelę kontenerem z `position: relative`,
+   * co pozwala łatwo zakotwiczyć pieczątkę.
+   */
+  const ImageWrapper = () => (
+    <Box sx={{ position: 'relative' }}>
+      <PictureCarousel images={images} name={name} />
+      {soldOut && (
+        <Box
+          component='img'
+          src={soldOutStamp}
+          alt='Sold‑out'
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: { xs: 200, md: 300 },
+            pointerEvents: 'none',
+            zIndex: 2,
+          }}
+        />
+      )}
+    </Box>
+  );
+
   return (
     <Box sx={{ p: 2 }}>
       {isMobile ? (
@@ -29,7 +63,7 @@ export const ProductSection = ({ id, name, description, imageUrl }: Product) => 
             <Typography
               variant='h5'
               gutterBottom
-              textAlign={'center'}
+              textAlign='center'
               sx={{
                 fontWeight: 500,
                 fontSize: '2rem',
@@ -49,7 +83,7 @@ export const ProductSection = ({ id, name, description, imageUrl }: Product) => 
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <PictureCarousel images={images} name={name} />
+            <ImageWrapper />
           </Grid>
         </Grid>
       ) : (
@@ -66,7 +100,7 @@ export const ProductSection = ({ id, name, description, imageUrl }: Product) => 
               <Typography
                 variant='h5'
                 gutterBottom
-                textAlign={'center'}
+                textAlign='center'
                 sx={{
                   fontWeight: 500,
                   fontSize: '3rem',
@@ -84,7 +118,7 @@ export const ProductSection = ({ id, name, description, imageUrl }: Product) => 
               <Typography
                 variant='body1'
                 sx={{
-                  marginBottom: isMobile ? '0' : '24px',
+                  marginBottom: isMobile ? 0 : '24px',
                   fontSize: '1.6rem',
                   margin: '0 auto',
                   px: 2,
@@ -94,7 +128,7 @@ export const ProductSection = ({ id, name, description, imageUrl }: Product) => 
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
-              <PictureCarousel images={images} name={name} />
+              <ImageWrapper />
             </Grid>
           </Grid>
         </Box>
