@@ -15,6 +15,27 @@ export const content: IContent = {
   },
   productSection: {
     product: [
+            {
+        id: 'banda',
+        name: 'Mchu Banda',
+        description:
+          'Zestaw trzech uroczych doniczek z mchem - dwa Smyki i jeden Niuchacz. Idealny prezent lub gotowa dekoracja do mieszkania, biura albo łazienki. Pachnie, wygląda i niczego nie wymaga.',
+        imageUrl: [
+          'banda_onyx_table.jpg',
+          'banda_marble_table.jpg',
+          'banda_onyx.jpg',
+          'banda_onyx_box.jpg',
+          'banda_marble.jpg',
+          'banda_marble_box.jpg',
+        ],
+      },
+      {
+      id: 'dzienMatki',
+      name: 'Dzień Matki 2025',
+      description:
+       'Bo Mama zasługuje na wszystko, co najlepsze - nawet na kawałek lasu w doniczce. Limitowana edycja naszego zestawu Mchu Banda - elegancka wersja tylko na Dzień Matki. 30 zestawów w czerni i zaledwie 5 w wersji marmurowej. Stylowy, pachnący i zawsze oddany. Jak prawdziwy członek rodziny...',
+      imageUrl: ['dzienMatki.jpg'],
+     },
       {
         id: 'smyk',
         name: 'Mech Smyk',
@@ -50,20 +71,6 @@ export const content: IContent = {
         ],
       },
       {
-        id: 'banda',
-        name: 'Mchu Banda',
-        description:
-          'Zestaw trzech uroczych doniczek z mchem - dwa Smyki i jeden Niuchacz. Idealny prezent lub gotowa dekoracja do mieszkania, biura albo łazienki. Pachnie, wygląda i niczego nie wymaga.',
-        imageUrl: [
-          'banda_onyx_table.jpg',
-          'banda_marble_table.jpg',
-          'banda_onyx.jpg',
-          'banda_onyx_box.jpg',
-          'banda_marble.jpg',
-          'banda_marble_box.jpg',
-        ],
-      },
-      {
         id: 'mechrzestny',
         name: 'Ojciec Mechrzestny',
         description:
@@ -76,13 +83,6 @@ export const content: IContent = {
           'mechrzestny_marble_table.jpg',
         ],
       },
-      // {
-      //   id: 'dzienMatki',
-      //   name: 'Dzień Matki 2025',
-      //   description:
-      //     'Bo Mama zasługuje na wszystko, co najlepsze - nawet na kawałek lasu w doniczce. Limitowana edycja naszego zestawu Mchu Banda - elegancka wersja tylko na Dzień Matki. 30 zestawów w czerni i zaledwie 5 w wersji marmurowej. Stylowy, pachnący i zawsze oddany. Jak prawdziwy członek rodziny...',
-      //   imageUrl: ['dzienMatki.jpg'],
-      // },
     ],
   },
   arrangements: [
